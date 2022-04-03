@@ -1,7 +1,7 @@
 {
-	"name": "Wave",
+	"name": "WaveR",
 	"plugin-id": "Sprite",
-	"sid": 950012642365751,
+	"sid": 622860046993589,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2967326,
+						"imageSpriteId": 2839204,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 648817185750560,
+				"sid": 303705326116210,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -2,15 +2,17 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 
-let player
-let wave
-let timeSinceStart
+let player;
+let waves = [];
+let wall;
 
-let lowtide = true
-let hightide = false
+let timeSinceStart;
 
-const direction = [0, 1, 2, 3]
-let dirChoice = 0
+let lowtide = true;
+let hightide = false;
+
+const direction = [0, 1, 2, 3];
+let dirChoice = 0;
 
 runOnStartup(async runtime =>
 {
@@ -19,7 +21,7 @@ runOnStartup(async runtime =>
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
 	
-	timeSinceStart = 0
+	timeSinceStart = 0;
 });
 
 async function OnBeforeProjectStart(runtime)
@@ -30,65 +32,119 @@ async function OnBeforeProjectStart(runtime)
 	
 	runtime.addEventListener("tick", () => Tick(runtime));
 	
-	player = runtime.objects.Player.getFirstInstance()
+	player = runtime.objects.Player.getFirstInstance();
 	
-	player.y = 160
-	player.x = 160
+	player.y = 160;
+	player.x = 160;
 	
-	wave = runtime.objects.Wave.getAllInstances()
-	wave.forEach((w, i) => {
-		w.x = i * 16
-		w.y = -120
+	// Init wave position to perimiter of screen
+	// waves are indexed as follows:
+	// Top: 	0
+	// Right: 	1
+	// Bottom: 	2
+	// Left: 	3
+	waves.push(runtime.objects.WaveT.getAllInstances());
+	waves.push(runtime.objects.WaveR.getAllInstances());
+	waves.push(runtime.objects.WaveB.getAllInstances());
+	waves.push(runtime.objects.WaveL.getAllInstances());
+	waves.forEach((waveList, i) => {
+		waveList.forEach((w, j) => {
+			switch(i) {
+				case 0: 
+					w.x = j * 16 + 8;
+					w.y = -120;
+					break;
+				case 1: 
+					w.x = 440;
+					w.y = j * 16 + 8;
+					break;
+				case 2: 
+					w.x = j * 16 + 8;
+					w.y = 440;
+					break;
+				case 3: 
+					w.x = -120;
+					w.y = j * 16 + 8;
+					break;
+			}
+		});
 	});
+	
+	wall = runtime.objects.Player.getFirstInstance();
+	wall.x = 168;
+	wall.y = 184;
 }
 
 function Tick(runtime)
 {
 	const dt = runtime.dt;
-	timeSinceStart += dt
+	timeSinceStart += dt;
 	
-	Wave(timeSinceStart, direction[dirChoice])
+	Wave(timeSinceStart, direction[dirChoice]);
 
 	// Since we use sin() to do the waves, they will do a full cycle each time our timer reaches Pi
 	// This increments which direction the waves come from each time Pi is reached
 	// This also toggles low/high tides
 	if(timeSinceStart > Math.PI) {
-		timeSinceStart = 0
-		dirChoice += 1
+		timeSinceStart = 0;
+		dirChoice += 1;
 		if(dirChoice == 4) {
-			dirChoice = 0
-			lowtide = !lowtide
-			hightide = !hightide
+			dirChoice = 0;
+			lowtide = !lowtide;
+			hightide = !hightide;
 		}
 	}
 }
 
 function Wave(time, direction) {
-	const magnitude = hightide ? 0.5 : 2.0
-	wave.forEach((w, i) => {
-		// Top
-		if(direction == 0) {
-			w.x = 8 + i * 16
-			w.y = -120 + (magnitude * 60 * Math.sin(time))
-		}
-		
-		// Bottom
-		else if (direction == 2) {
-			w.x = 8 + i * 16
-			w.y = 440 - (magnitude * 60 * Math.sin(time))
-		}
-		
-		// Right
-		else if (direction == 1) {
-			w.x = i * 16 + 440 - (magnitude * 60 * Math.sin(time))
-			w.y = 160
-		}
-		
-		// Left
-		else if (direction == 3) {
-			w.x = i * 16 - 160 + (magnitude * 60 * Math.sin(time))
-			w.y = 160
-		}
-	});
+	const magnitude = hightide ? 1.0 : 2.5;
 	
+	waves.forEach((waveList, i) => {
+		waveList.forEach((w, j) => {
+			CheckForWall(w, time, i, magnitude);
+			switch(i) {
+				case 0: 
+					w.y = -120 + (magnitude * 60 * Math.sin(time));
+					break;
+				case 1: 
+					w.x = 440 - (magnitude * 60 * Math.sin(time));
+					break;
+				case 2: 
+					w.y = 440 - (magnitude * 60 * Math.sin(time));
+					break;
+				case 3: 
+					w.x = -120 + (magnitude * 60 * Math.sin(time));
+					break;	
+			}
+		});
+	});	
+}
+
+function CheckForWall(wave, time, direction, magnitude) {
+	const currentX = wave.x;
+	const currentY = wave.y;
+	const delta = (magnitude * 60 * Math.sin(time));
+	
+	switch(direction) {
+		case 0:
+			if((currentY + delta) >= wall.y) {
+				console.log("top collision!");
+			}
+			break;
+		case 1:
+			if((currentX - delta) <= wall.x) {
+				console.log("right collision!");
+			}
+			break;
+		case 2:
+			if((currentY - delta) <= wall.y) {
+				console.log("bottom collision!");
+			}
+			break;
+		case 3:
+			if((currentX + delta) >= wall.x) {
+				console.log("left collision!");
+			}
+			break;
+	}
 }
