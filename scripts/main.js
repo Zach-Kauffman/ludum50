@@ -2,6 +2,8 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 
+let player
+
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.
@@ -17,9 +19,14 @@ async function OnBeforeProjectStart(runtime)
 	// instances are created and available to use here.
 	
 	runtime.addEventListener("tick", () => Tick(runtime));
+	
+	player = runtime.objects.Player.getFirstInstance()
+	
+	player.y = 160
+	player.x = 160
 }
 
 function Tick(runtime)
 {
-	// Code to run every tick
+
 }

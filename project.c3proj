@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 28503,
-	"name": "test",
+	"name": "beach",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -26,6 +26,22 @@
 			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -223,6 +239,6 @@
 		"cordovaAndroidScheme": "https"
 	},
 	"viewportWidth": 320,
-	"viewportHeight": 240,
+	"viewportHeight": 320,
 	"firstLayout": null
 }

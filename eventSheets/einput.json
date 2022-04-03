@@ -414,26 +414,6 @@
 			],
 			"sid": 437982791096515,
 			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "ondown1",
-					"objectClass": "InputManager",
-					"sid": 240244078302362,
-					"parameters": {
-						"input0": "\"Up\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"type": "script",
-					"script": "runtime.objects.Player.getFirstInstance().y -= 10"
-				}
-			],
-			"sid": 352104572899860
 		}
 	],
 	"sid": 794749520911209
