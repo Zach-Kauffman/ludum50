@@ -1,0 +1,420 @@
+{
+	"name": "eInput",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 302217179998590,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 737575137063415,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 439503759320753,
+					"parameters": {
+						"input0": "\"Up\""
+					}
+				}
+			],
+			"sid": 909155806254486,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 490533682361460,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 343319365279059,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 483788136028043,
+					"parameters": {
+						"input0": "\"Up\""
+					}
+				}
+			],
+			"sid": 238136131687645,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 950262762610769,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 237730883652855,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 183060328583422,
+					"parameters": {
+						"input0": "\"Left\""
+					}
+				}
+			],
+			"sid": 233800276142603,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 691964374239688,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 886361376260220,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 142305675663051,
+					"parameters": {
+						"input0": "\"Left\""
+					}
+				}
+			],
+			"sid": 653954850475266,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 654358898353274,
+					"parameters": {
+						"key": 40
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 513791050331986,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 325572059684564,
+					"parameters": {
+						"input0": "\"Down\""
+					}
+				}
+			],
+			"sid": 300531156745307,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 962068291336094,
+					"parameters": {
+						"key": 40
+					}
+				},
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 502311911359385,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 923207893364840,
+					"parameters": {
+						"input0": "\"Down\""
+					}
+				}
+			],
+			"sid": 202296499207242,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 782168333541120,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 931309834192279,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 551397367442985,
+					"parameters": {
+						"input0": "\"Right\""
+					}
+				}
+			],
+			"sid": 806923428278182,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 173942418867862,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 596618836686608,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 851541406957265,
+					"parameters": {
+						"input0": "\"Right\""
+					}
+				}
+			],
+			"sid": 614593941493656,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 234428350458604,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 652395018983126,
+					"parameters": {
+						"input0": "\"3\""
+					}
+				}
+			],
+			"sid": 204134063271515,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 551862624361013,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 271951214960208,
+					"parameters": {
+						"input0": "\"3\""
+					}
+				}
+			],
+			"sid": 563982107001308,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 864739111782444,
+					"parameters": {
+						"key": 88
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 843856709170063,
+					"parameters": {
+						"input0": "\"2\""
+					}
+				}
+			],
+			"sid": 234480556931084,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 292185694978895,
+					"parameters": {
+						"key": 88
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 200070796011962,
+					"parameters": {
+						"input0": "\"2\""
+					}
+				}
+			],
+			"sid": 539412761546233,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 716435516415048,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setdown6",
+					"objectClass": "InputManager",
+					"sid": 862553856448269,
+					"parameters": {
+						"input0": "\"1\""
+					}
+				}
+			],
+			"sid": 645859541611103,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 221987223905535,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "setup5",
+					"objectClass": "InputManager",
+					"sid": 431561538879227,
+					"parameters": {
+						"input0": "\"1\""
+					}
+				}
+			],
+			"sid": 437982791096515,
+			"isOrBlock": true
+		}
+	],
+	"sid": 794749520911209
+}

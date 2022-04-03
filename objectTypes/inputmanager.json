@@ -1,0 +1,10 @@
+{
+	"name": "InputManager",
+	"plugin-id": "SkymenInputManager",
+	"sid": 869775378810428,
+	"singleglobal-inst": {
+		"type": "InputManager",
+		"properties": {},
+		"uid": 2
+	}
+}
