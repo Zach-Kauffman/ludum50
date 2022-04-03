@@ -35,9 +35,11 @@ async function OnBeforeProjectStart(runtime)
 	player.y = 160
 	player.x = 160
 	
-	wave = runtime.objects.Wave.getFirstInstance()
-	wave.x = 160
-	wave.y = 640
+	wave = runtime.objects.Wave.getAllInstances()
+	wave.forEach((w, i) => {
+		w.x = i * 16
+		w.y = -120
+	});
 }
 
 function Tick(runtime)
@@ -63,20 +65,30 @@ function Tick(runtime)
 
 function Wave(time, direction) {
 	const magnitude = hightide ? 0.5 : 2.0
-	if(direction == 0) {
-		wave.x = 0
-		wave.y = 560 - (magnitude * 60 * Math.sin(time))
-	}
-	else if (direction == 2) {
-		wave.x = 0
-		wave.y = -240 + (magnitude * 60 * Math.sin(time))
-	}
-	else if (direction == 3) {
-		wave.x = 560 - (magnitude * 60 * Math.sin(time))
-		wave.y = 0
-	}
-	else if (direction == 1) {
-		wave.x = -240 + (magnitude * 60 * Math.sin(time))
-		wave.y = 0
-	}
+	wave.forEach((w, i) => {
+		// Top
+		if(direction == 0) {
+			w.x = 8 + i * 16
+			w.y = -120 + (magnitude * 60 * Math.sin(time))
+		}
+		
+		// Bottom
+		else if (direction == 2) {
+			w.x = 8 + i * 16
+			w.y = 440 - (magnitude * 60 * Math.sin(time))
+		}
+		
+		// Right
+		else if (direction == 1) {
+			w.x = i * 16 + 440 - (magnitude * 60 * Math.sin(time))
+			w.y = 160
+		}
+		
+		// Left
+		else if (direction == 3) {
+			w.x = i * 16 - 160 + (magnitude * 60 * Math.sin(time))
+			w.y = 160
+		}
+	});
+	
 }
