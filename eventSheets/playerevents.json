@@ -18,7 +18,7 @@
 					"id": "simulate-control",
 					"objectClass": "Player",
 					"sid": 240772835401934,
-					"behaviorType": "8Direction",
+					"behaviorType": "movement",
 					"parameters": {
 						"control": "up"
 					}
@@ -43,7 +43,7 @@
 					"id": "simulate-control",
 					"objectClass": "Player",
 					"sid": 913511795994225,
-					"behaviorType": "8Direction",
+					"behaviorType": "movement",
 					"parameters": {
 						"control": "down"
 					}
@@ -68,7 +68,7 @@
 					"id": "simulate-control",
 					"objectClass": "Player",
 					"sid": 708818026568610,
-					"behaviorType": "8Direction",
+					"behaviorType": "movement",
 					"parameters": {
 						"control": "left"
 					}
@@ -93,7 +93,7 @@
 					"id": "simulate-control",
 					"objectClass": "Player",
 					"sid": 186487448468360,
-					"behaviorType": "8Direction",
+					"behaviorType": "movement",
 					"parameters": {
 						"control": "right"
 					}

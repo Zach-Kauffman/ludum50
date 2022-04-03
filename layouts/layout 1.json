@@ -18,7 +18,7 @@
 					"uid": 4,
 					"instanceVariables": {},
 					"behaviors": {
-						"8Direction": {
+						"movement": {
 							"properties": {
 								"max-speed": 160,
 								"acceleration": 99999999,
@@ -36,10 +36,39 @@
 						}
 					},
 					"world": {
-						"x": 134,
-						"y": 93,
+						"x": 157,
+						"y": 151,
 						"width": 16,
 						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Wave",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 160,
+						"y": -320,
+						"width": 640,
+						"height": 640,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

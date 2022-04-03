@@ -1,21 +1,10 @@
 {
-	"name": "Player",
+	"name": "Wave",
 	"plugin-id": "Sprite",
-	"sid": 451571230936778,
+	"sid": 950012642365751,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "EightDir",
-			"name": "movement",
-			"sid": 956874486046495
-		},
-		{
-			"behaviorId": "bound",
-			"name": "BoundToLayout",
-			"sid": 950603207805829
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -29,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9046821,
+						"imageSpriteId": 2967326,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 696062311824175,
+				"sid": 648817185750560,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
