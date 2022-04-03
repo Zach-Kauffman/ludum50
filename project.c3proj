@@ -21,13 +21,22 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "zjbqdv5rqd1",
 	"objectTypes": {
 		"items": [
 			"InputManager",
-			"Keyboard"
+			"Keyboard",
+			"Player"
 		],
 		"subfolders": []
 	},
