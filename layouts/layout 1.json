@@ -25,7 +25,7 @@
 								"deceleration": 99999999,
 								"directions": "dir-8",
 								"set-angle": "interval-90",
-								"default-controls": true,
+								"default-controls": false,
 								"enabled": true
 							}
 						},
@@ -91,5 +91,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "eInput"
+	"eventSheet": "eMain"
 }

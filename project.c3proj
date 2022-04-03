@@ -70,7 +70,9 @@
 	},
 	"eventSheets": {
 		"items": [
-			"eInput"
+			"eInput",
+			"playerEvents",
+			"eMain"
 		],
 		"subfolders": []
 	},

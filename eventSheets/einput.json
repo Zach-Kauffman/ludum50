@@ -7,7 +7,7 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 302217179998590,
+					"sid": 679350326839971,
 					"parameters": {
 						"key": 38
 					}
@@ -15,7 +15,7 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 737575137063415,
+					"sid": 722996352707905,
 					"parameters": {
 						"key": 87
 					}

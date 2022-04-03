@@ -1,0 +1,106 @@
+{
+	"name": "playerEvents",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "isdown0",
+					"objectClass": "InputManager",
+					"sid": 529851169703651,
+					"parameters": {
+						"input0": "\"Up\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 240772835401934,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 580240617252533
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "isdown0",
+					"objectClass": "InputManager",
+					"sid": 262090592409014,
+					"parameters": {
+						"input0": "\"Down\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 913511795994225,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 139546866759224
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "isdown0",
+					"objectClass": "InputManager",
+					"sid": 338919832885144,
+					"parameters": {
+						"input0": "\"Left\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 708818026568610,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 862124151454877
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "isdown0",
+					"objectClass": "InputManager",
+					"sid": 135046506707720,
+					"parameters": {
+						"input0": "\"Right\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 186487448468360,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 474217596343639
+		}
+	],
+	"sid": 264736843470700
+}

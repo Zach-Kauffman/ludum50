@@ -1,0 +1,14 @@
+{
+	"name": "eMain",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "eInput"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "playerEvents"
+		}
+	],
+	"sid": 951910384876667
+}
