@@ -92,6 +92,7 @@ function Tick(runtime)
 			dirChoice = 0;
 			lowtide = !lowtide;
 			hightide = !hightide;
+			console.log(hightide ? "It's low tide" : "It's high tide");
 		}
 	}
 }
