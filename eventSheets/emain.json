@@ -8,6 +8,30 @@
 		{
 			"eventType": "include",
 			"includeSheet": "playerEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 999985475297797,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "WaveB",
+					"sid": 996298332496609,
+					"parameters": {
+						"visibility": "toggle"
+					}
+				}
+			],
+			"sid": 326609456580453
 		}
 	],
 	"sid": 951910384876667

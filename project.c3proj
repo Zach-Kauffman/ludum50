@@ -57,7 +57,8 @@
 			"WaveR",
 			"WaveB",
 			"WaveL",
-			"Wall"
+			"Wall",
+			"MainWaveR"
 		],
 		"subfolders": []
 	},

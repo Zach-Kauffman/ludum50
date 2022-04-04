@@ -1,7 +1,7 @@
 {
-	"name": "Wall",
+	"name": "MainWaveR",
 	"plugin-id": "Sprite",
-	"sid": 625287043436833,
+	"sid": 933492818620502,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,19 +11,19 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 240,
+						"height": 320,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3,
+						"imageSpriteId": 3702350,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 293788071769164,
+				"sid": 212986303608082,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

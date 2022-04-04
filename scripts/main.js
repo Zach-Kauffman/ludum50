@@ -4,6 +4,7 @@
 
 let player;
 let waves = [];
+let mainWave;
 let wall;
 
 let timeSinceStart;
@@ -70,9 +71,13 @@ async function OnBeforeProjectStart(runtime)
 		});
 	});
 	
-	wall = runtime.objects.Player.getFirstInstance();
-	wall.x = 168;
-	wall.y = 184;
+	mainWave = runtime.objects.MainWaveR.getFirstInstance();
+	mainWave.x = 440;
+	mainWave.y = 160;
+	
+	wall = runtime.objects.Wall.getFirstInstance();
+	wall.x = 264;
+	wall.y = 264;
 }
 
 function Tick(runtime)
@@ -98,54 +103,104 @@ function Tick(runtime)
 }
 
 function Wave(time, direction) {
-	const magnitude = hightide ? 1.0 : 2.5;
-	
+	const magnitude = hightide ? 1.0 : 1.0;
+	const delta = (magnitude * 60 * Math.sin(time));
+	mainWave.x = 440 - delta;
 	waves.forEach((waveList, i) => {
 		waveList.forEach((w, j) => {
-			CheckForWall(w, time, i, magnitude);
-			switch(i) {
-				case 0: 
-					w.y = -120 + (magnitude * 60 * Math.sin(time));
-					break;
-				case 1: 
-					w.x = 440 - (magnitude * 60 * Math.sin(time));
-					break;
-				case 2: 
-					w.y = 440 - (magnitude * 60 * Math.sin(time));
-					break;
-				case 3: 
-					w.x = -120 + (magnitude * 60 * Math.sin(time));
-					break;	
+			const distanceToWall = WillCollideWithWall(w, delta, i);
+			if (distanceToWall > 0) {
+// 				switch(i) {
+// 					case 0: 
+// 						w.y += distanceToWall;
+// 						break;
+// 					case 1: 
+// 						w.x -= distanceToWall;
+// 						break;
+// 					case 2: 
+// 						w.y -= distanceToWall;
+// 						break;
+// 					case 3: 
+// 						w.x += distanceToWall;
+// 						break;	
+// 				}
 			}
+			
+			else {
+				switch(i) {
+					case 0: 
+						w.y = -120 + delta;
+						break;
+					case 1: 
+						w.x = 440 - delta;
+						break;
+					case 2: 
+						w.y = 440 - delta;
+						break;
+					case 3: 
+						w.x = -120 + delta;
+						break;	
+				}
+			}
+			
 		});
 	});	
 }
 
-function CheckForWall(wave, time, direction, magnitude) {
+function WillCollideWithWall(wave, delta, direction) {
 	const currentX = wave.x;
 	const currentY = wave.y;
-	const delta = (magnitude * 60 * Math.sin(time));
+	
+	let nextCoord;
+	let upcomingMoveDistance;
+	let distanceToWall;
 	
 	switch(direction) {
 		case 0:
-			if((currentY + delta) >= wall.y) {
-				console.log("top collision!");
+			if(currentX == wall.x) {
+				nextCoord = -120 + delta;
+				upcomingMoveDistance = Math.abs(currentY - nextCoord);
+				distanceToWall = Math.abs(currentY + 128 - wall.y);
+				if(upcomingMoveDistance >= distanceToWall) {
+					console.log("top collision!");
+					return distanceToWall;
+				}
 			}
 			break;
 		case 1:
-			if((currentX - delta) <= wall.x) {
-				console.log("right collision!");
+			if (currentY == wall.y) {
+				nextCoord = 440 - delta;
+				upcomingMoveDistance = Math.abs(currentX - nextCoord);
+				distanceToWall = Math.abs(currentX - 128 - wall.x);
+				if(upcomingMoveDistance >= distanceToWall) {
+					console.log("right collision!");
+					return distanceToWall;
+				}
 			}
 			break;
 		case 2:
-			if((currentY - delta) <= wall.y) {
-				console.log("bottom collision!");
+			if(currentX == wall.x) {
+				nextCoord = 440 - delta;
+				upcomingMoveDistance = Math.abs(currentY - nextCoord);
+				distanceToWall = Math.abs(currentY - 128 - wall.y);
+				if(upcomingMoveDistance >= distanceToWall) {
+					console.log("bottom collision!");
+					return distanceToWall;
+				}
 			}
 			break;
 		case 3:
-			if((currentX + delta) >= wall.x) {
-				console.log("left collision!");
+			if(currentY == wall.y) {
+				nextCoord = -120 + delta;
+				upcomingMoveDistance = Math.abs(currentX - nextCoord);
+				distanceToWall = Math.abs(currentX + 128 - wall.x);
+				if(upcomingMoveDistance >= distanceToWall) {
+					console.log("left collision!");
+					return distanceToWall;
+				}
 			}
 			break;
 	}
+	
+	return -1;
 }
